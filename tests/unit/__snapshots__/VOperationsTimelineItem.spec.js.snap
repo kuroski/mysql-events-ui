@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheOperationsLog renders the component correctly 1`] = `
+<div class="timeline-item">
+  <div class="timeline-item__marker"></div>
+  <div class="timeline-item__content">
+    <div class="type">
+
+    </div>
+    <div class="schema">
+
+    </div>
+    <div class="table">
+
+    </div>
+    <div class="date">
+      <vuecomponent-stub auto-update="60"></vuecomponent-stub>
+    </div>
+  </div>
+</div>
+`;
