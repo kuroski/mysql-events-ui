@@ -6,16 +6,16 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
     "@rodrigogs/mysql-events": "^0.3.0",
     "express": "^4.16.3",
     "mysql": "^2.15.0",
     "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vue-socket.io": "^2.1.1-b",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -26,6 +26,7 @@
     "@vue/test-utils": "^1.0.0-beta.16",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
+    "flush-promises": "^1.0.0",
     "vue-template-compiler": "^2.5.16"
   },
   "browserslist": [
