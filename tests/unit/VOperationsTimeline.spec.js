@@ -13,7 +13,8 @@ describe('TheOperationsLog', () => {
 
     return {
       wrapper,
-      operationsTimelineItems: () => wrapper.findAll(VOperationsTimelineItem)
+      operationsTimelineItems: () => wrapper.findAll(VOperationsTimelineItem),
+      noOperations: () => wrapper.find('.no-operations'),
     }
   }
 
@@ -38,13 +39,14 @@ describe('TheOperationsLog', () => {
       socketFixture.response.UPDATE,
       socketFixture.response.DELETE,
     ]
-    const { operationsTimelineItems } = build()
+    const { operationsTimelineItems, noOperations } = build()
     const firstItem = operationsTimelineItems().at(0)
 
     // assert
     expect(operationsTimelineItems().length).toBe(props.operations.length)
     expect(firstItem.exists()).toBe(true)
     expect(firstItem.props().operation).toBe(props.operations[0])
+    expect(noOperations().exists()).toBe(false)
   })
 
   it('updates the timeline list items', () => {
@@ -69,5 +71,15 @@ describe('TheOperationsLog', () => {
 
     // assert
     expect(operationsTimelineItems().length).toBe(expectedOperations.length)
+  })
+
+  it('shows empty timeline when no operations are passed', () => {
+    // arranje
+    const { operationsTimelineItems, noOperations } = build()
+
+    // assert
+    expect(operationsTimelineItems().exists()).toBe(false)
+    expect(noOperations().exists()).toBe(true)
+    expect(noOperations().isVisible()).toBe(true)
   })
 })

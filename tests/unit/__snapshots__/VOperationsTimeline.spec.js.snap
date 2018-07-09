@@ -1,3 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TheOperationsLog renders the component correctly 1`] = `<div class="timeline"></div>`;
+exports[`TheOperationsLog renders the component correctly 1`] = `
+<div class="timeline">
+  <div class="no-operations">
+    <i class="material-icons">
+      timer_off
+    </i>
+    No operations on the moment
+  </div>
+</div>
+`;
