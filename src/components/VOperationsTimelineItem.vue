@@ -25,19 +25,14 @@ export default {
       </div>
     </div>
     <div class="timeline-item__content">
-      <div class="schema">
-        {{ operation.schema }}
-      </div>
-
-      <div class="table">
+      <div>
+        <strong>{{ operation.schema }}:</strong>
         {{ operation.table }}
       </div>
 
-      <button class="more-information">
-        <i class="material-icons">
-          unfold_more
-        </i>
-      </button>
+      <i class="material-icons more-information">
+        unfold_more
+      </i>
     </div>
   </div>
 </template>
@@ -60,40 +55,23 @@ export default {
 .timeline-item__content {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr 1fr;
   justify-items: start;
-  padding: 4px 0 4px 10px;
+  align-content: center;
+  padding: 4px 5px 4px 10px;
+  transition: .2s background-color;
+  cursor: pointer;
 }
 
-.schema {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.table {
-  grid-column: 1;
-  grid-row: 2;
+.timeline-item__content:hover {
+  background-color: #EBF3F6;
 }
 
 .more-information {
   grid-column: 2;
-  grid-row: 1 / 3;
   justify-self: end;
   align-self: center;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: .2s background-color;
-}
-
-.more-information > i {
+  padding: 0;
   transition: .2s color;
-}
-
-.more-information:hover > i {
-  color: #247BA0;
 }
 
 .type {

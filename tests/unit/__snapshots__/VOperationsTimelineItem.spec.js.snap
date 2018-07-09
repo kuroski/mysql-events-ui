@@ -11,17 +11,12 @@ exports[`TheOperationsLog renders the component correctly 1`] = `
     </div>
   </div>
   <div class="timeline-item__content">
-    <div class="schema">
+    <div><strong>:</strong>
 
     </div>
-    <div class="table">
-
-    </div>
-    <button class="more-information">
-      <i class="material-icons">
-        unfold_more
-      </i>
-    </button>
+    <i class="material-icons more-information">
+      unfold_more
+    </i>
   </div>
 </div>
 `;

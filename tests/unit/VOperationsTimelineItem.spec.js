@@ -22,8 +22,7 @@ describe('TheOperationsLog', () => {
     return {
       wrapper,
       type: () => wrapper.find('.type'),
-      schema: () => wrapper.find('.schema'),
-      table: () => wrapper.find('.table'),
+      content: () => wrapper.find('.timeline-item__content'),
       date: () => wrapperMounted.find('.date'),
     }
   }
@@ -45,17 +44,17 @@ describe('TheOperationsLog', () => {
   it('renders operation information', () => {
     // arranje
     props.operation = socketFixture.response.INSERT
-    const { type, schema, table, date } = build()
+    const { type, content, date } = build()
 
     // assert
     expect(type().exists()).toBe(true)
     expect(type().text()).toContain(props.operation.type)
 
-    expect(schema().exists()).toBe(true)
-    expect(schema().text()).toContain(props.operation.schema)
+    expect(content().exists()).toBe(true)
+    expect(content().text()).toContain(props.operation.schema)
 
-    expect(table().exists()).toBe(true)
-    expect(table().text()).toContain(props.operation.table)
+    expect(content().exists()).toBe(true)
+    expect(content().text()).toContain(props.operation.table)
 
     expect(date().exists()).toBe(true)
     expect(date().text()).toContain(toNow(props.operation.timestamp))
