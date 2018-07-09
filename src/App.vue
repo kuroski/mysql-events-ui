@@ -2,7 +2,7 @@
 import socket from '@/socket'
 
 export default {
-  name: 'app',
+  name: 'App',
   created() {
     socket.connect()
   }

@@ -2,7 +2,7 @@
 import VOperationsTimelineItem from '@/components/VOperationsTimelineItem'
 
 export default {
-  name: 'operations-timeline',
+  name: 'OperationsTimeline',
   components: {
     VOperationsTimelineItem,
   },

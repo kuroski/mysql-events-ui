@@ -3,6 +3,6 @@
 exports[`TheOperationsLog renders the component correctly 1`] = `
 <div>
   <h1>Your event's will be listed here!</h1>
-  <operations-timeline-stub></operations-timeline-stub>
+  <operationstimeline-stub></operationstimeline-stub>
 </div>
 `;

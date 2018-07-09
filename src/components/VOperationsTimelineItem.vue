@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'operations-timeline-item',
+  name: 'OperationsTimelineItem',
   props: {
     operation: {
       type: Object,
@@ -28,7 +28,10 @@ export default {
       </div>
 
       <div class="date">
-        <timeago :since="operation.timestamp" :auto-update="60"></timeago>
+        <timeago
+          :since="operation.timestamp"
+          :auto-update="60"
+        ></timeago>
       </div>
     </div>
   </div>

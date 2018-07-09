@@ -3,7 +3,7 @@ import { mapState } from 'vuex'
 import VOperationsTimeline from '@/components/VOperationsTimeline'
 
 export default {
-  name: 'operations-log',
+  name: 'OperationsLog',
   components: {
     VOperationsTimeline,
   },
