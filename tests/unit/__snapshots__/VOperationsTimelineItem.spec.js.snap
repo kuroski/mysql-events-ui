@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TheOperationsLog renders the component correctly 1`] = `
+exports[`VOperationsTimelineItem renders the component correctly 1`] = `
 <div class="timeline-item">
   <div class="timeline-item__header">
     <div class="type">

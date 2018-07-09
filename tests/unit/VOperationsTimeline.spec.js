@@ -3,7 +3,7 @@ import VOperationsTimeline from '@/components/VOperationsTimeline'
 import VOperationsTimelineItem from '@/components/VOperationsTimelineItem'
 import socketFixture from './fixtures/socketServer'
 
-describe('TheOperationsLog', () => {
+describe('VOperationsTimeline', () => {
   let props
 
   const build = () => {
