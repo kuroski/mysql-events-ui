@@ -1,10 +1,20 @@
 <script>
+import VOperationsTimelineItemDetail from '@/components/VOperationsTimelineItemDetail'
+
 export default {
   name: 'OperationsTimelineItem',
+  components: {
+    VOperationsTimelineItemDetail,
+  },
   props: {
     operation: {
       type: Object,
       required: true,
+    }
+  },
+  data() {
+    return {
+      showDetails: false,
     }
   },
   computed: {
@@ -36,7 +46,10 @@ export default {
         ></timeago>
       </div>
     </div>
-    <div class="timeline-item__content">
+    <div
+      @click="showDetails = !showDetails"
+      class="timeline-item__content"
+    >
       <div>
         <strong>{{ operation.schema }}:</strong>
         {{ operation.table }}
@@ -46,6 +59,11 @@ export default {
         unfold_more
       </i>
     </div>
+    <VOperationsTimelineItemDetail
+      :type="operation.type"
+      :rows="operation.affectedRows"
+      v-show="showDetails"
+    />
   </div>
 </template>
 
@@ -96,6 +114,7 @@ export default {
   align-self: center;
   padding: 0;
   transition: .2s color;
+  user-select: none;
 }
 
 .type {

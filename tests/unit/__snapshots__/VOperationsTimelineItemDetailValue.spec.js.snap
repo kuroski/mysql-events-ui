@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VOperationsTimelineItem renders the component correctly 1`] = `
+<div class="value">
+
+  <span class=""><strong>id:</strong>
+    4
+  </span></div>
+`;

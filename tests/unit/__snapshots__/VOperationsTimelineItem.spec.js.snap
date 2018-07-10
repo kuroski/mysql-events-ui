@@ -18,5 +18,6 @@ exports[`VOperationsTimelineItem renders the component correctly 1`] = `
       unfold_more
     </i>
   </div>
+  <voperationstimelineitemdetail-stub style="display: none;"></voperationstimelineitemdetail-stub>
 </div>
 `;

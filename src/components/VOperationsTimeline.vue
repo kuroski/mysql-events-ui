@@ -48,6 +48,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 3px 6px rgba(0, 0, 0, 0.26);
+  padding: 10px;
 }
 
 .no-operations > i {

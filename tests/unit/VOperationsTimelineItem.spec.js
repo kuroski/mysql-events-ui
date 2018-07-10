@@ -2,6 +2,7 @@ import { mount, shallowMount, createLocalVue } from '@vue/test-utils'
 import toNow from 'date-fns/distance_in_words_to_now'
 import VueTimeago from 'vue-timeago'
 import VOperationsTimelineItem from '@/components/VOperationsTimelineItem'
+import VOperationsTimelineItemDetail from '@/components/VOperationsTimelineItemDetail'
 import socketFixture from './fixtures/socketServer'
 
 const localVue = createLocalVue()
@@ -25,6 +26,7 @@ describe('VOperationsTimelineItem', () => {
       content: () => wrapper.find('.timeline-item__content'),
       type: () => wrapper.find('.type'),
       date: () => wrapperMounted.find('.date'),
+      detail: () => wrapper.find(VOperationsTimelineItemDetail),
     }
   }
 
@@ -45,7 +47,7 @@ describe('VOperationsTimelineItem', () => {
   it('renders operation information', () => {
     // arranje
     props.operation = socketFixture.response.INSERT
-    const { type, content, date } = build()
+    const { type, content, date, detail } = build()
 
     // assert
     expect(type().exists()).toBe(true)
@@ -59,6 +61,8 @@ describe('VOperationsTimelineItem', () => {
 
     expect(date().exists()).toBe(true)
     expect(date().text()).toContain(toNow(props.operation.timestamp))
+
+    expect(detail().isVisible()).toBe(false)
   })
 
   it('changes item class based on operation type', () => {
@@ -86,5 +90,27 @@ describe('VOperationsTimelineItem', () => {
     expect(header().classes()).not.toContain('timeline-item__header--insert')
     expect(header().classes()).not.toContain('timeline-item__header--update')
     expect(header().classes()).toContain('timeline-item__header--delete')
+  })
+
+  it('shows opeartion details', () => {
+    // arranje
+    const { content, detail } = build()
+
+    // act
+    expect(detail().isVisible()).toBe(false)
+    content().trigger('click')
+
+    // assert
+    expect(detail().isVisible()).toBe(true)
+  })
+
+  it('passes valid props to details component', () => {
+    // arranje
+    props.operation = socketFixture.response.INSERT
+    const { detail } = build()
+
+    // assert
+    expect(detail().props().type).toBe(props.operation.type)
+    expect(detail().props().rows).toBe(props.operation.affectedRows)
   })
 })
