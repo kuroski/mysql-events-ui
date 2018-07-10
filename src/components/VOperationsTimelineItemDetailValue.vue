@@ -11,6 +11,7 @@ export default {
       required: true,
     },
     value: {
+      type: [String, Number, Boolean],
       required: true,
     },
     highlight: {
@@ -39,9 +40,11 @@ export default {
     class="value"
   >
     {{ prefix }}
-    <span :class="{
-      'highlight': highlight
-    }">
+    <span
+      :class="{
+        'highlight': highlight
+      }"
+    >
       <strong>{{ name }}:</strong>
       {{ value }}
     </span>
@@ -54,6 +57,7 @@ export default {
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: left;
+  opacity: 0.95;
 }
 
 .value--remove {

@@ -47,8 +47,8 @@ export default {
       </div>
     </div>
     <div
-      @click="showDetails = !showDetails"
       class="timeline-item__content"
+      @click="showDetails = !showDetails"
     >
       <div>
         <strong>{{ operation.schema }}:</strong>
@@ -60,9 +60,9 @@ export default {
       </i>
     </div>
     <VOperationsTimelineItemDetail
+      v-show="showDetails"
       :type="operation.type"
       :rows="operation.affectedRows"
-      v-show="showDetails"
     />
   </div>
 </template>
