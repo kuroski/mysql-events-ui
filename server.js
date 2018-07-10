@@ -3,22 +3,23 @@ const http = require('http').Server(app)
 const io = require('socket.io')(http)
 const mysql = require('mysql')
 const MySQLEvents = require('@rodrigogs/mysql-events')
+require('dotenv').load()
 
-io.on('connection', function(socket){
+io.on('connection', (socket) => {
   console.log('a user connected')
   console.log(socket)
 })
 
-http.listen(3000, function(){
+http.listen(3000, () => {
   console.log('listening on *:3000')
 })
 
 const program = async () => {
   const connection = mysql.createConnection({
-    host: '0.0.0.0',
-    port: 3306,
-    user: 'root',
-    password: 'root',
+    host: process.env.MYSQL_HOST,
+    port: process.env.MYSQL_PORT,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
   })
 
   const instance = new MySQLEvents(connection, {
