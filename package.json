@@ -17,9 +17,11 @@
     "mysql": "^2.15.0",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1",
+    "uuid": "^3.3.2",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vue-timeago": "^4.0.2",
+    "vue2vis": "0.0.13",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
