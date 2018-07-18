@@ -84,4 +84,26 @@ describe('VOperationsTimelineItem', () => {
     expect(firstValue.props().highlight).toBe(false)
     expect(firstValue.props().remove).toBe(true)
   })
+
+  it('passes "-" as text when no value is present in before or after rows affected', () => {
+    // arranje
+    props.type = socketFixture.response.UPDATE_EMPTY_PROPERTY.type
+    props.rows = socketFixture.response.UPDATE_EMPTY_PROPERTY.affectedRows
+    const { values } = build()
+    const firstNameValue = values().at(1)
+    const secondNameValue = values().at(3)
+
+    // assert
+    expect(firstNameValue.props().prefix).toBe('-')
+    expect(firstNameValue.props().name).toBe('name')
+    expect(firstNameValue.props().value).toBe('-')
+    expect(firstNameValue.props().highlight).toBe(false)
+    expect(firstNameValue.props().remove).toBe(true)
+
+    expect(secondNameValue.props().prefix).toBe('+')
+    expect(secondNameValue.props().name).toBe('name')
+    expect(secondNameValue.props().value).toBe('-')
+    expect(secondNameValue.props().highlight).toBe(false)
+    expect(secondNameValue.props().add).toBe(true)
+  })
 })

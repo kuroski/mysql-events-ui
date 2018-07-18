@@ -43,12 +43,6 @@ export default {
 
 <template>
   <div>
-    <timeline
-      ref="timeline"
-      :items="items"
-      :groups="groups"
-      :options="options"
-    ></timeline>
     <VOperationsTimeline :operations="operations" />
   </div>
 </template>

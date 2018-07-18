@@ -2,8 +2,6 @@
 
 exports[`TheOperationsLog renders the component correctly 1`] = `
 <div>
-  <timeline items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-    groups="[object Object],[object Object],[object Object]" options="[object Object]"></timeline>
   <operationstimeline-stub></operationstimeline-stub>
 </div>
 `;

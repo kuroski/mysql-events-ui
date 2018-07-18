@@ -31,7 +31,7 @@ export default {
         .map(key => ({
           prefix: '-',
           name: key,
-          value: rows[key],
+          value: rows[key] || '-',
         }))
     },
     after() {
@@ -43,7 +43,7 @@ export default {
         .map(key => ({
           prefix: '+',
           name: key,
-          value: rows[key],
+          value: rows[key] || '-',
           highlight: before && (before[key] !== rows[key])
         }))
     }
